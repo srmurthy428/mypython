@@ -1,0 +1,13 @@
+def myformat(x):
+    return ('%.2f' % x)
+import statistics
+if __name__ == '__main__':
+    n = int(input())
+    student_marks = {}
+    for _ in range(n):
+        name, *line = input().split()
+        scores = list(map(float, line))
+        student_marks[name] = scores
+    query_name = input()
+    print ('%.2f' % round(statistics.mean(student_marks[query_name]),2))
+
